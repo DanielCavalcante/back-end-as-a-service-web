@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     
-    angular.module('baas-front-end')
+    angular.module('baas-front-end.home')
     .controller('HomeCtrl', HomeCtrl);
   
     HomeCtrl.$inject = ['$firebaseArray'];
@@ -16,8 +16,6 @@
 
       function activate() {
         vm.people = people;
-        console.log(vm.people);
-        console.log('teste');
         
       }
   
