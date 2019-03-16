@@ -9,13 +9,13 @@
     /* @ngInject */
     function HomeCtrl($firebaseArray) {
       var vm = this;
-      var peopleRef = firebase.database().ref('people');
-      var people = $firebaseArray(peopleRef);
+      // var peopleRef = firebase.database().ref('people');
+      // var people = $firebaseArray(peopleRef);
 
       activate();
 
       function activate() {
-        vm.people = people;
+        //vm.people = people;
         
       }
   
