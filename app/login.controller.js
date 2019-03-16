@@ -3,12 +3,12 @@
 
     angular
         .module('baas-front-end')
-        .controller('AppCtrl', AppCtrl);
+        .controller('LoginCtrl', LoginCtrl);
 
-    AppCtrl.$inject = ['$state', '$firebaseArray'];
+    LoginCtrl.$inject = ['$state', '$firebaseArray'];
 
     /* @ngInject */
-    function AppCtrl($state) {
+    function LoginCtrl($state, $firebaseArray) {
         var vm = this;
         // var peopleRef = firebase.database().ref('people');
         // var people = $firebaseArray(peopleRef);
