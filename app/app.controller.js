@@ -8,14 +8,15 @@
     AppCtrl.$inject = ['$state', '$firebaseArray'];
 
     /* @ngInject */
-    function AppCtrl($state) {
+    function AppCtrl($state, $firebaseArray) {
         var vm = this;
-        // var peopleRef = firebase.database().ref('people');
-        // var people = $firebaseArray(peopleRef);
+        var peopleRef = firebase.database().ref('people');
+        var people = $firebaseArray(peopleRef);
 
         activate();
 
         function activate() {
+            console.log(people);
         }
     } 
   })();
