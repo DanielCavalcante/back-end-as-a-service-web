@@ -8,6 +8,7 @@
       <th scope="col">Nome</th>
       <th scope="col">E-mail</th>
       <th scope="col">Telefone</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,9 @@
       <td>{{person.name}}</td>
       <td>{{person.email}}</td>
       <td>{{person.tel}}</td>
+      <td>
+        <button ng-click="vm.remove(person)" class="btn btn-link">Excluir</button>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -233,3 +233,13 @@ input[type=button], input[type=submit], input[type=reset]  {
 *:focus {
     outline: none;
 }
+.person {
+
+}
+.person label {
+  margin: 10px 0;
+
+}
+.person button {
+  margin-top: 10px;
+}

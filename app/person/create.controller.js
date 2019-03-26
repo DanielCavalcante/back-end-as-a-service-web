@@ -4,18 +4,26 @@
   angular.module('baas-front-end.person')
   .controller('CreatePersonCtrl', CreatePersonCtrl);
 
-  CreatePersonCtrl.$inject = ['$firebaseArray'];
+  CreatePersonCtrl.$inject = ['personFactory', '$state'];
 
   /* @ngInject */
-  function CreatePersonCtrl($firebaseArray) {
+  function CreatePersonCtrl(personFactory, $state) {
     var vm = this;
-    // var peopleRef = firebase.database().ref('people');
-    // var people = $firebaseArray(peopleRef);
+    vm.create = create;
 
     activate();
 
+    function create(person) {
+      if (person.name && person.email) {
+        personFactory.create(person).then(function(res) {
+          $state.go('app.person');
+        }).catch(function (error) {
+          console.log(error);
+        });
+      }
+    }
+
     function activate() {
-      //vm.people = people;
       
     }
 

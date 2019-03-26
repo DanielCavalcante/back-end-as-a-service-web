@@ -4,20 +4,27 @@
     angular.module('baas-front-end.person')
     .controller('PersonCtrl', PersonCtrl);
   
-    PersonCtrl.$inject = ['$firebaseArray'];
+    PersonCtrl.$inject = ['personFactory'];
   
     /* @ngInject */
-    function PersonCtrl($firebaseArray) {
+    function PersonCtrl(personFactory) {
       var vm = this;
-      var peopleRef = firebase.database().ref('people');
-      var people = $firebaseArray(peopleRef);
+      vm.remove = remove;
+      vm.people = personFactory.findAll();
 
       activate();
 
-      function activate() {
-        vm.people = people;
+      function remove(person) {
+        personFactory.remove(person).then(function(res) {
+          console.log('Removed');
+        }).catch(function (error) {
+          console.log(error);
+        });
       }
-  
+
+      function activate() {
+        
+      }
     }
   })();
   
