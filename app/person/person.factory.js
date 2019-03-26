@@ -3,15 +3,17 @@
   
     angular.module('baas-front-end.person').factory('personFactory', personFactory);
   
-    personFactory.$inject = ['$firebaseArray'];
+    personFactory.$inject = ['$firebaseArray', '$firebaseObject'];
   
     /* @ngInject */
-    function personFactory($firebaseArray) {
+    function personFactory($firebaseArray, $firebaseObject) {
       var peopleRef = firebase.database().ref('people');
       var people = $firebaseArray(peopleRef);
+      
   
       var service = {
         findAll: findAll,
+        findOne: findOne,
         create: create,
         remove: remove
       };
@@ -31,6 +33,11 @@
 
       function remove(person) {
         return people.$remove(person).then(function(ref) {});
+      };
+
+      function findOne(personId) {
+        var refOne = peopleRef.child(personId);
+        return $firebaseObject(refOne);
       };
   
     }

@@ -13,7 +13,9 @@
   </thead>
   <tbody>
     <tr ng-repeat="person in vm.people">
-      <td>{{person.$id}}</td>
+      <td>
+        <button ui-sref="app.editPerson({personId: person.$id})" class="btn btn-link">{{person.$id}}</button>
+      </td>  
       <td>{{person.name}}</td>
       <td>{{person.email}}</td>
       <td>{{person.tel}}</td>

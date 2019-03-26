@@ -18,9 +18,18 @@
       controller: 'CreatePersonCtrl',
       controllerAs: 'vm'
     }
+
+    var editPersonState = {
+      name: 'app.editPerson',
+      url: '/person/edit/:personId',
+      templateUrl: 'person/edit.html',
+      controller: 'EditPersonCtrl',
+      controllerAs: 'vm'
+    }
       
     $stateProvider.state(personState);
     $stateProvider.state(createPersonState);
+    $stateProvider.state(editPersonState);
 
   })
 })();
