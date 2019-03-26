@@ -4,20 +4,15 @@
     angular.module('baas-front-end.home')
     .controller('HomeCtrl', HomeCtrl);
   
-    HomeCtrl.$inject = ['$firebaseArray'];
+    HomeCtrl.$inject = [];
   
     /* @ngInject */
-    function HomeCtrl($firebaseArray) {
+    function HomeCtrl() {
       var vm = this;
-      // var peopleRef = firebase.database().ref('people');
-      // var people = $firebaseArray(peopleRef);
 
       activate();
 
-      function activate() {
-        //vm.people = people;
-        
-      }
+      function activate() {}
   
     }
   })();
