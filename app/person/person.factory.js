@@ -36,8 +36,12 @@
       };
 
       function findOne(personId) {
-        var refOne = peopleRef.child(personId);
-        return $firebaseObject(refOne);
+        people.$loaded().then(function() {
+          console.log("loaded record:", obj.$id, obj.someOtherKeyInData);
+  
+       });
+        // var refOne = peopleRef.child(personId);
+        // return $firebaseObject(refOne);
       };
   
     }
